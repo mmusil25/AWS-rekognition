@@ -1,24 +1,125 @@
-body{
-  margin: 25px;
-  font-family: verdana;
+main {
+    width: 75%;
+    margin: auto;
 }
 
-h1{
-  color: darkslategray;
+.upload {
+    padding-top: 5em;
+    margin: auto;
 }
 
-p {
-  font-size: 12pt;
-  color: black;
-}
-canvas {
-  height: 175px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: black;
+#drop_zone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    height: 100px;
+    border-radius: 15px;
+    background-color: rgb(102, 102, 102);
+    color: white;
 }
 
-input {
-  font-family: verdana;
-  font-size: 12pt;
+.spacer {
+    text-align: center;
+    margin-top: 5em;
+}
+
+.file-element {
+    width: 100%;
+    background: rgb(79, 79, 79);
+    color: white;
+    border-radius: 15px;
+}
+
+.file-info {
+    background: rgb(129, 129, 129, 0.5);
+    border-radius: 15px 15px 0 0;
+}
+
+.file-info ul {
+    list-style: none;
+    padding: 1em;
+}
+
+.file-info ul b {
+    padding-right: 0.5em;
+}
+
+.file-content {
+    margin: auto;
+    text-align: center;
+    padding-bottom: 1em;
+    width: 90%;
+}
+
+.file-content img,
+.file-content audio,
+.file-content video {
+    width: 100%;
+}
+
+#toast {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30px;
+    font-size: 17px;
+}
+
+#toast.show {
+    visibility: visible;
+    -webkit-animation: fade 5s;
+    animation: fade 5s;
+}
+
+@-webkit-keyframes fade {
+    0% {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    15% {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    85% {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    100% {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fade {
+    0% {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    15% {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    85% {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    100% {
+        bottom: 0;
+        opacity: 0;
+    }
 }
