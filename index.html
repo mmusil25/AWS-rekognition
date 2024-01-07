@@ -1,29 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Test</title>
-	<link rel="stylesheet" href="css/main.css" />
-	<script type="text/javascript" src="js/capture.js"></script>
+	<title>File Upload</title>
+
+	<style type="text/css">
+		body {
+			margin: 0 auto;
+			max-width: 40em;
+			width: 88%;
+		}
+
+		label,
+		input {
+			display: block;
+			width: 100%;
+		}
+
+		input {
+			margin-bottom: 1em;
+		}
+
+		#app {
+			margin-bottom: 1em;
+		}
+
+		img {
+			height: auto;
+			max-width: 100%;
+		}
+	</style>
 </head>
-
 <body>
-	<main>
-		<div class="upload">
-			<div id="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
-				<p>Drag one or more files to this Drop Zone ...</p>
-			  </div>
-		</div>
-		<div class="content">
-			<div class="spacer">
-				<h1>Files</h1>
-			</div>
-		</div>
-		<div id="toast"><p></p></div>
-	</main>
-</body>
 
+	<h1>File Upload</h1>
+
+	<div id="app"></div>
+
+	<form id="upload">
+		<label for="file">File to upload</label>
+		<input type="file" id="file" accept="image/*">
+
+		<button>Upload</button>
+	</form>
+
+
+	<script>
+		// Get the form and file field
+		let form = document.querySelector('#upload');
+		let file = document.querySelector('#file');
+		let app = document.querySelector('#app');
+
+		/**
+		 * Log the uploaded file to the console
+		 * @param {event} Event The file loaded event
+		 */
+		function logFile (event) {
+			let str = event.target.result;
+			let img = document.createElement('img');
+			img.src = str;
+			app.append(img);
+			console.log(str);
+		}
+
+		/**
+		 * Handle submit events
+		 * @param  {Event} event The event object
+		 */
+		function handleSubmit (event) {
+
+			// Stop the form from reloading the page
+			event.preventDefault();
+
+			// If there's no file, do nothing
+			if (!file.value.length) return;
+
+			// Create a new FileReader() object
+			let reader = new FileReader();
+
+			// Setup the callback event to run when the file is read
+			reader.onload = logFile;
+
+			// Read the file
+			reader.readAsDataURL(file.files[0]);
+
+		}
+
+		// Listen for submit events
+		form.addEventListener('submit', handleSubmit);
+	</script>
+</body>
 </html>
