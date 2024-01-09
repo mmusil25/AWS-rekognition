@@ -79,6 +79,8 @@
 			console.log(str);
 		}
 
+		function retrieve
+
 		/**
 		 * Handle submit events
 		 * @param  {Event} event The event object
@@ -89,8 +91,7 @@
 			event.preventDefault();
 			
 			var myfile = file.files[0];
-			var fileName = "test.png";
-			var photoKey = fileName;
+			var fileName = file.files.item(0).name;
 			
 			// If there's no file, do nothing
 			if (!file.value.length) return;
@@ -108,12 +109,12 @@
 			var upload = new AWS.S3.ManagedUpload({
 				params: {
 				  Bucket: albumBucketName,
-				  Key: photoKey,
+				  Key: fileName,
 				  Body: myfile
 				}
 			});
 			
-			 var promise = upload.promise();
+			var promise = upload.promise();
 
 		    promise.then(
 				function(data) {
