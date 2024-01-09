@@ -59,6 +59,8 @@
 			IdentityPoolId: IdentityPoolId
 			})
 		});
+		
+		// Create the DynamoDB service object
 
 		var s3 = new AWS.S3({
 			apiVersion: "2006-03-01",
@@ -116,6 +118,7 @@
 		    promise.then(
 				function(data) {
 					alert("Successfully uploaded photo.");
+
 				},
 				function(err) {
 					return alert("There was an error uploading your photo: ", err.message);
