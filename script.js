@@ -15,6 +15,10 @@
 		
 		// Create the DynamoDB service object
 
+		var ddb = new AWS.DynamoDB({apiVersion: '2012-08-10'});
+		
+
+		// create s3 service object
 		var s3 = new AWS.S3({
 			apiVersion: "2006-03-01",
 			params: { Bucket: albumBucketName }
@@ -76,6 +80,24 @@
 					return alert("There was an error uploading your photo: ", err.message);
 				}
 			);
+			
+			//Access dynamodb and retrieve labels
+			
+		var ddbParams = {
+			TableName: 'RekognitionProjectTable',
+			Key: {
+				'fileName': {S: fileName}
+			}
+			ProjectionExpression: 'ATTRIBUTE_NAME'
+		};
+
+		ddb.getItem(ddbParams, function(err, data){
+			if (err){
+				console.log("Error", err);
+			} else {
+				console.log("Success", data.Item);
+			}	
+		}
 		}
 
 		// Listen for submit events
