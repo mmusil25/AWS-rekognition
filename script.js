@@ -82,23 +82,24 @@
 			);
 			
 			//Access dynamodb and retrieve labels
-			
-		var ddbParams = {
-			TableName: 'RekognitionProjectTable',
-			Key: {
-				'fileName': {S: fileName}
+	/*		
+			var ddbParams = {
+				TableName: 'RekognitionProjectTable',
+				Key: {
+					'fileName': {S: fileName}
+				}
+				ProjectionExpression: 'ATTRIBUTE_NAME'
+			};
+
+			ddb.getItem(ddbParams, function(err, data){
+				if (err){
+					console.log("Error", err);
+				} else {
+					console.log("Success", data.Item);
+				}	
 			}
-			ProjectionExpression: 'ATTRIBUTE_NAME'
-		};
-
-		ddb.getItem(ddbParams, function(err, data){
-			if (err){
-				console.log("Error", err);
-			} else {
-				console.log("Success", data.Item);
-			}	
-		}
-		}
-
+			}
+	*/
 		// Listen for submit events
 		form.addEventListener('submit', handleSubmit);
+		
