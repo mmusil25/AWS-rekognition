@@ -15,7 +15,7 @@
 		
 		// Create the DynamoDB service object
 
-		//var ddb = new AWS.DynamoDB({apiVersion: '2012-08-10'});
+		var ddb = new AWS.DynamoDB({apiVersion: '2012-08-10'});
 		
 
 		// create s3 service object
@@ -82,7 +82,7 @@
 			);
 			
 			//Access dynamodb and retrieve labels
-	/*		
+				
 			var ddbParams = {
 				TableName: 'RekognitionProjectTable',
 				Key: {
@@ -97,8 +97,8 @@
 				} else {
 					console.log("Success", data.Item);
 				}	
-			}
-			*/
+			};
+			
 			}
 	
 		// Listen for submit events
