@@ -82,7 +82,7 @@
 			);
 			
 			//Access dynamodb and retrieve labels
-			
+			/*
 			var ddbParams = {
 				TableName: 'RekognitionProjectTable',
 				Key: {
@@ -90,7 +90,7 @@
 				}
 				ProjectionExpression: 'ATTRIBUTE_NAME'
 			};
-			/*
+			
 			ddb.getItem(ddbParams, function(err, data){
 				if (err){
 					console.log("Error", err);
