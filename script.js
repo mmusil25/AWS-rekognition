@@ -98,8 +98,9 @@
 					console.log("Success", data.Item);
 				}	
 			}
+			*/
 			}
-	*/
+	
 		// Listen for submit events
 		form.addEventListener('submit', handleSubmit);
 		
