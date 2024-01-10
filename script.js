@@ -90,7 +90,7 @@
 				TableName: 'RekognitionProjectTable',
 				Key: {
 					'fileName': {S: fileName}
-				}
+				},
 				ProjectionExpression: 'ATTRIBUTE_NAME'
 			};
 			
