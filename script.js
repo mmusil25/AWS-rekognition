@@ -89,7 +89,7 @@
 			var ddbParams = {
 				TableName: 'RekognitionProjectTable',
 				Key: {
-					'fileName': {S: fileName}
+					'fileName': {'S': fileName}
 				},
 				ProjectionExpression: 'labels'
 			};
