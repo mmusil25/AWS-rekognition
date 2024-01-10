@@ -1,7 +1,11 @@
 # AWS-rekognition
-Take a webcam snapsnot and pass it to AWS Rekognition for machine learning
+Upload any image and receive computer vision labels from AWS Rekognition. 
+
+## [Link to project Demo](https://main.d28o31nkfohb6j.amplifyapp.com/)
+
+## [Project blog post](https://www.markmusil.click/2024/01/10/aws-computer-vision-project/)
 
 ![Architecture](Rekognition.drawio.png)
 
-The user will take a picture with their webcam which will then be passed to AWS Rekognition via a Lambda function. The function will then return the discovered image information to the user. 
+For a full project description see the associated blog post. 
 
