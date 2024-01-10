@@ -33,7 +33,7 @@
 			let img = document.createElement('img');
 			img.src = str;
 			app.append(img);
-			console.log(str);
+			//console.log(str);
 		}
 
 
@@ -91,7 +91,7 @@
 				Key: {
 					'fileName': {S: fileName}
 				},
-				ProjectionExpression: 'ATTRIBUTE_NAME'
+				ProjectionExpression: 'labels'
 			};
 			
 			console.log(ddbParams);
