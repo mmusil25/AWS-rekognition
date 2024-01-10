@@ -74,10 +74,7 @@
 
 		    promise.then(
 				function(data) {
-					alert("Successfully uploaded photo.");
-					
-					
-					
+					alert("Successfully uploaded photo.");		
 				},
 				function(err) {
 					return alert("There was an error uploading your photo: ", err.message);
@@ -85,6 +82,8 @@
 			);
 			
 			//Access dynamodb and retrieve labels
+			
+			
 			
 			var ddbParams = {
 				TableName: 'RekognitionProjectTable',
@@ -94,16 +93,20 @@
 				ProjectionExpression: 'labels'
 			};
 			
-			console.log(ddbParams);
+			setTimeout(function(){
+				
+				ddb.getItem(ddbParams, function(err, data){
+							if (err){
+								console.log("Error", err);
+							} else {
+								console.log("Success", data.Item);
+								document.getElementsByName('display')[0].value=data.Item.labels.SS;
+							}	
+						});
 			
-			ddb.getItem(ddbParams, function(err, data){
-				if (err){
-					console.log("Error", err);
-				} else {
-					console.log("Success", data.Item);
-					document.getElementsByName('display')[0].value=data.Item.labels.SS;
-				}	
-			});
+			}, 2000);
+			
+			
 			
 			}
 	
