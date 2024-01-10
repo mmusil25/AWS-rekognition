@@ -82,7 +82,7 @@
 			);
 			
 			//Access dynamodb and retrieve labels
-				
+			
 			var ddbParams = {
 				TableName: 'RekognitionProjectTable',
 				Key: {
@@ -98,7 +98,7 @@
 					console.log("Success", data.Item);
 				}	
 			};
-			/*
+			*/
 			}
 	
 		// Listen for submit events
