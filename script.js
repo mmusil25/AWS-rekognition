@@ -90,7 +90,7 @@
 				}
 				ProjectionExpression: 'ATTRIBUTE_NAME'
 			};
-
+			/*
 			ddb.getItem(ddbParams, function(err, data){
 				if (err){
 					console.log("Error", err);
@@ -98,7 +98,7 @@
 					console.log("Success", data.Item);
 				}	
 			};
-			
+			/*
 			}
 	
 		// Listen for submit events
