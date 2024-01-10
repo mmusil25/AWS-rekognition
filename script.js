@@ -101,7 +101,7 @@
 					console.log("Error", err);
 				} else {
 					console.log("Success", data.Item);
-					document.getElementsByName('display')[0].value= data.Item;
+					document.getElementsByName('display')[0].value=data.Item.labels.SS;
 				}	
 			});
 			
