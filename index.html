@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>File Upload</title>
+	<title>Computer Vision Demo</title>
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-	<h1>File Upload</h1>
-
+	<h1>Computer Vision Demo</h1>
+	<p> 
+	This project uses aws rekognition to determine labels for any input image. 
+	Just choose an image and hit upload!
+	</p>
 	<div id="app"></div>
 
 	<form id="upload">
@@ -15,7 +18,7 @@
 		<input type="file" id="file" accept="image/*">
 		<button>Upload</button>
 	</form>
-	
+	<h2> Labels </h2>
 	<input type="textbox" name="display">
 	
 	
