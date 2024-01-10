@@ -75,21 +75,8 @@
 		    promise.then(
 				function(data) {
 					alert("Successfully uploaded photo.");
-					var ddbParams = {
-						TableName: 'RekognitionProjectTable',
-						Key: {
-							'fileName': {S: fileName}
-						}
-						ProjectionExpression: 'ATTRIBUTE_NAME'
-					};
 					
-					ddb.getItem(ddbParams, function(err, data){
-						if (err){
-							console.log("Error", err);
-						} else {
-							console.log("Success", data.Item);
-					};	
-			};
+					
 					
 				},
 				function(err) {
@@ -99,7 +86,21 @@
 			
 			//Access dynamodb and retrieve labels
 			
+			var ddbParams = {
+				TableName: 'RekognitionProjectTable',
+				Key: {
+					'fileName': {S: fileName}
+				}
+				ProjectionExpression: 'ATTRIBUTE_NAME'
+			};
 			
+			ddb.getItem(ddbParams, function(err, data){
+				if (err){
+					console.log("Error", err);
+				} else {
+					console.log("Success", data.Item);
+				}	
+			});
 			
 			}
 	
