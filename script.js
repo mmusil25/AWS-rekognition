@@ -94,11 +94,14 @@
 				ProjectionExpression: 'ATTRIBUTE_NAME'
 			};
 			
+			console.log(ddbParams);
+			
 			ddb.getItem(ddbParams, function(err, data){
 				if (err){
 					console.log("Error", err);
 				} else {
 					console.log("Success", data.Item);
+					document.getElementsByName('display')[0].value= data.Item;
 				}	
 			});
 			
