@@ -36,6 +36,9 @@ function logFile (event) {
 	//console.log(str);
 }
 
+function sleep(ms) {
+	return new Promise(resolve => setTimeout(resolve, ms));
+  }
 
 /**
  * Handle submit events
@@ -74,7 +77,7 @@ function handleSubmit (event) {
 
 	promise.then(
 		function(data) {
-			alert("Successfully uploaded photo.");		
+			alert("Please wait for labels.");		
 		},
 		function(err) {
 			return alert("There was an error uploading your photo: ", err.message);
@@ -93,7 +96,7 @@ function handleSubmit (event) {
 		ProjectionExpression: 'labels'
 	};
 	
-	setTimeout(function(){
+	sleep(2000).then(() => {
 		
 		ddb.getItem(ddbParams, function(err, data){
 					if (err){
@@ -104,7 +107,7 @@ function handleSubmit (event) {
 					}	
 				});
 	
-	}, 4000);
+			});
 	
 	
 	
