@@ -96,7 +96,7 @@ function handleSubmit (event) {
 		ProjectionExpression: 'labels'
 	};
 	
-	sleep(2000).then(() => {
+	sleep(4000).then(() => {
 		
 		ddb.getItem(ddbParams, function(err, data){
 					if (err){
