@@ -77,7 +77,7 @@ function handleSubmit (event) {
 
 	promise.then(
 		function(data) {
-			alert("Please wait for labels.");		
+			alert("Please wait for labels. If labels don't appear hit upload again.");		
 		},
 		function(err) {
 			return alert("There was an error uploading your photo: ", err.message);
